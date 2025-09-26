@@ -1,0 +1,55 @@
+# Project: Farming Management System(OOP Project)
+# Makefile created by Embarcadero Dev-C++ 6.3
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o User.o Validation.o Farmer.o LandPlot.o Crop.o Equipment.o Inventory.o Weather.o Login.o
+LINKOBJ  = main.o User.o Validation.o Farmer.o LandPlot.o Crop.o Equipment.o Inventory.o Weather.o Login.o
+LIBS     = -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib" -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include"
+CXXINCS  = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++"
+BIN      = "Farming Management System(OOP Project).exe"
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+DEL      = C:\Program Files (x86)\Embarcadero\Dev-Cpp\DevCpp.exe INTERNAL_DEL
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${DEL} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+User.o: User.cpp
+	$(CPP) -c User.cpp -o User.o $(CXXFLAGS)
+
+Validation.o: Validation.cpp
+	$(CPP) -c Validation.cpp -o Validation.o $(CXXFLAGS)
+
+Farmer.o: Farmer.cpp
+	$(CPP) -c Farmer.cpp -o Farmer.o $(CXXFLAGS)
+
+LandPlot.o: LandPlot.cpp
+	$(CPP) -c LandPlot.cpp -o LandPlot.o $(CXXFLAGS)
+
+Crop.o: Crop.cpp
+	$(CPP) -c Crop.cpp -o Crop.o $(CXXFLAGS)
+
+Equipment.o: Equipment.cpp
+	$(CPP) -c Equipment.cpp -o Equipment.o $(CXXFLAGS)
+
+Inventory.o: Inventory.cpp
+	$(CPP) -c Inventory.cpp -o Inventory.o $(CXXFLAGS)
+
+Weather.o: Weather.cpp
+	$(CPP) -c Weather.cpp -o Weather.o $(CXXFLAGS)
+
+Login.o: Login.cpp
+	$(CPP) -c Login.cpp -o Login.o $(CXXFLAGS)
